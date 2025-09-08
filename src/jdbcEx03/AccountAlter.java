@@ -1,11 +1,10 @@
 package jdbcEx03;
 
-import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import jdbcEx01.Person;
 import util.DBUtil;
 
 public class AccountAlter {

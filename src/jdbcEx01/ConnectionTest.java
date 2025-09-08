@@ -23,7 +23,7 @@ public class ConnectionTest {
     try(Connection con = DriverManager.getConnection(url, username, password)) { // 도로 연결
       System.out.println("AutoCommit 상태: " + con.getAutoCommit());
       con.setAutoCommit(true);
-      Statement stmt = con.createStatement(); // 자동차 만듦, but 일회성임
+      Statement stmt = con.createStatement(); // 자동차 만듦, but 일회성임, ? 와 같은 placeholder 사용하지 않음
       int result = stmt.executeUpdate("INSERT INTO person(id, name) values (101,'강호동')");
       if (result == 1) {
         System.out.println("Insert successfully!");
