@@ -25,12 +25,14 @@ public class MemberDAO {
     String sql = "{CALL SP_MEMBER_UPDATE(?,?,?)}";
 
     try(CallableStatement call = conn.prepareCall(sql)) {
-//      call.setString(memberVO.getM_userid());
-//      call.setInt(choice);
-//      switch (choice) {
-//        1 -> {call.setString(memberVO.getM);}
-//
-//      }
+      call.setString(memberVO.getM_userid());
+      call.setInt(choice);
+
+      switch (choice) {
+        case 1 -> call.setString(memberVO.getM_pwd());
+        case 2 -> call.setString(memberVO.getM_email());
+        case 3 -> call.setString(memberVO.getM_hp());
+      }
 
 
     } catch (SQLException e) {
