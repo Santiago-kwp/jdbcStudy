@@ -21,6 +21,24 @@ public class MemberDAO {
 
   }
 
+  public void editInfoMember(MemberVO memberVO, int choice) {
+    String sql = "{CALL SP_MEMBER_UPDATE(?,?,?)}";
+
+    try(CallableStatement call = conn.prepareCall(sql)) {
+//      call.setString(memberVO.getM_userid());
+//      call.setInt(choice);
+//      switch (choice) {
+//        1 -> {call.setString(memberVO.getM);}
+//
+//      }
+
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+  }
+
 
   public void showMember(MemberVO memberVO) {
     String sql = "{CALL SP_MEMBER_SHOW(?)}";
